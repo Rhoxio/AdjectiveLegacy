@@ -1,6 +1,6 @@
 # Adjective
 ======
-~Main files for my portfolio challenge during Phase 2 of Dev Bootcamp.~
+~~Main files for my portfolio challenge during Phase 2 of Dev Bootcamp.~~
 
 The files for the 'Adjective' game can be found [here](#)
 
