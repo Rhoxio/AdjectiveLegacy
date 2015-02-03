@@ -2,7 +2,7 @@
 ======
 ~Main files for my portfolio challenge during Phase 2 of Dev Bootcamp.~
 
-The files for the 'Adjective' game can be found [here[(#)
+The files for the 'Adjective' game can be found [here](#)
 
 This project is being converted over to a simple j-rpg style game creation engine. During it's creation, I came to the realization that a ton of the code that I was using to generate enemies, characters, and update elemnts of the UI were all extremely dynamic and could be repurposed to either make a full-fledged game, or be fine-tuned to make a simple game creation engine. 
 
