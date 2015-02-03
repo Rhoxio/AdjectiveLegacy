@@ -1,0 +1,233 @@
+.status-window{
+
+	background: url(http://www.titanui.com/wp-content/uploads/2013/09/13/Seamless-Classical-Pattern-Background-Vector-02.jpg);
+
+	text-align: center;
+	color:white;
+	font-size: 2em;
+
+	position: absolute;
+	width:28%;
+	height:18%;
+
+	bottom:0%;
+	right:4%;
+
+	border-right: outset #8D8D8D 10px;
+  	border-top: outset #717171 10px;
+}
+
+.player-window{
+
+	background: url(http://www.titanui.com/wp-content/uploads/2013/09/13/Seamless-Classical-Pattern-Background-Vector-02.jpg);
+
+	text-align: center;
+	color:white;
+
+	position: absolute;
+	width:28%;
+	height:18%;
+
+	bottom:0%;
+	left:4%;
+
+	border-left: outset #8D8D8D 10px;
+  	border-top: outset #717171 10px;
+}
+
+.admin-buttons{
+	position:absolute;
+	top:20%;
+
+	height:20%;
+	width:8%;
+}
+
+.admin-buttons button{
+	position:relative;
+	margin-top: 5%;
+}
+
+.overlay {
+  position:relative;
+  color:white;
+  top:5%;
+  left:5%;
+
+  width:90%;
+  height: 89%;
+
+/*  border: 1px solid white;*/
+}
+
+.character-display{
+
+/*	background: url(/css/images/sonia.png)center center;
+	background-size: cover;*/
+
+	overflow: hidden;
+
+	position:absolute;
+	color:yellow;
+
+	bottom:22%;
+	left:17%;
+
+	height:50%;
+	width:17%;
+
+	opacity: 1, !important;
+
+/*	border: 1px solid yellow;*/
+}
+
+.inner-sizing{
+	position:absolute;
+	height:100%;
+	right:0%;
+	top: center;
+}
+
+.npc-display{
+
+/*	background: url(/css/images/npc-test.png)center center;
+	background-size: cover;*/
+
+	overflow: hidden;
+
+	position:absolute;
+	color:yellow;
+
+	bottom:22%;
+	right:17%;
+
+	height:50%;
+	width:17%;
+
+	opacity: 1, !important;
+
+/*	border: 1px solid yellow;*/
+}
+
+.text-box-innard{
+	position:absolute;
+	text-align: center;
+
+	color:yellow;
+
+	top:3%;
+	left:1%;
+/*
+	border: 1px solid red;*/
+
+	width:97%;
+	height:92%;
+}
+
+.css-typing
+{
+    width: 30em;
+    white-space:nowrap;
+    overflow:hidden;
+    animation: type 5s steps(50, end) 1;
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+
+.npc-container{
+	position:absolute;
+	text-align: center;
+
+	width:30%;
+	height:10%;
+
+	top:68%;
+	right:35%%;
+
+/*	border: 1px solid lime;*/
+}
+
+.training-ground {
+	position: absolute;
+	right: 25%;
+	top: 25%;
+
+	font-size: 50%;
+	z-index: 1;
+}
+
+.centerline{
+	position: absolute;
+	top:0%;
+	left:0%;
+
+	border: 1px solid white;
+
+	width:50%;
+	height:100%;
+}
+
+.next{
+	position:absolute;
+
+	right:2%;
+	bottom:5%;
+}
+
+.map-display{
+	background: url(/css/images/main_city.jpg)center center;
+	background-size: cover;
+
+	position:absolute;
+	color:yellow;
+
+	bottom:22%;
+	right:35%;
+
+	height:50%;
+	width:30%;
+
+	opacity: 1, !important;
+
+/*	border: 1px solid green;*/
+}
+
+.gold-display{
+	color: gold;
+	font-size: 150%;
+	text-align: center;
+	margin-top: 1%;
+}
+
+.equip-button{
+	float: right;
+	background-color: #3385FF;
+	border-radius: 5px;
+}
+
+.unequip-button{
+	background-color: #FFFF66;
+	float: right;
+	margin-left: 7%;
+	border-radius: 5px;
+}
+
+
+.currently-equipped{
+text-align: center;
+margin-top: 2%;
+}
+
+.item-name{
+	font-size: 120%;
+}
+.item-desc{
+	font-size: 80%;
+margin:7px;
+}
+
+
+

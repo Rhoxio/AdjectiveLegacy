@@ -1,0 +1,143 @@
+body{
+ width:100%;
+ height:100%;
+}
+
+html {
+  background: url(http://www.w8themes.com/wp-content/uploads/2013/11/Fantasy-HD-Wallpaper.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+h2{
+  text-align: center;
+  font-style: helvetica;
+  color: #F9FFF9;
+}
+
+.input-box{
+  position: relative;
+  left:10%;
+  width: 80%;
+}
+
+.title{
+  font-family: impact;
+  font-size: 6em;
+
+  text-align: center;
+  margin-top: 5%;
+  color:#F9FFF9;
+  text-shadow: 2px 2px 5px black;
+}
+
+.login {
+  text-align: center;
+
+  height:20%;
+  width:10%;
+
+  position: absolute;
+  top:-22%;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+
+  margin: auto;
+}
+
+/*.login-bg:hover{
+  opacity:.9;
+    -webkit-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in;
+}*/
+
+
+.login-bg{
+  position: absolute;
+
+  border: 1px solid black;
+  border-radius: 15px;
+
+  top:29%;
+  left:40%;
+
+  width:20%;
+  height:30%;
+
+  border-right: outset #8D8D8D 5px;
+  border-top: outset #717171 5px;
+  border-left: outset #8D8D8D 5px;
+  border-bottom: outset #717171 5px;
+
+/*  opacity: .5;
+
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;*/
+
+  background: url("http://us.cdn2828.fansshare.com/photos/hdwallpaper/plain-gray-texture-background-plain-1265446845.jpg");
+}
+
+.button-styling {
+  position: relative;
+  top: 1%;
+  left:10%;
+  border-radius: 5px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 80%;
+  background: #5A8B63;
+  opacity: 1;
+}
+
+.login-submit{
+  position:absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.signup {
+  position: absolute;
+  top: 80%;
+  left:37%;
+  border-radius: 5px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 120%;
+  background: #5A8B63;
+  opacity: 1;
+}
+
+.version{
+color: white;
+position: absolute;
+right:0%;
+bottom:0%;
+}
+
+.box-text{
+  position:absolute;
+  bottom: 20%;
+  left: 20%;
+  font-family: helvetica;
+  color: white;
+  font-size: 100%;
+}
+
+
+
+
+
+

@@ -1,0 +1,511 @@
+html {
+  height: 100%;
+  background: url(http://i558.photobucket.com/albums/ss26/Cloud_Sykes/The_Best_HD_HQ_Hi-Res_Wallpapers_Collection_-_Fantasy_Art_by_tonyx__1300_pictures-561jpg_CurseOfTheOldTown_8.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body{
+ width:100%;
+ height:100%;
+}
+
+.bg-overlay{
+ height:100%;
+ background-color: black;
+ opacity: .0;
+}
+
+.log-out{
+  position: absolute;
+  right:0%;
+  top:0%;
+
+  border-radius: 3px;
+  border-left: outset #444444 5px;
+  border-bottom: outset #717171 5px;
+
+
+  width: 14%;
+  height: 5%;
+  background:url(http://www.wallsandfloors.co.uk/admin/uploads/ZoomImagecalacatta%20floor1334752478.jpg);
+}
+
+.logout-button{
+  margin-left: 12%;
+  margin-top: 3%;
+  position:absolute;
+  color:red;
+}
+
+.guide-button{
+  margin-top: 3%;
+  margin-left: 55%;
+  position:absolute;
+  color:green;
+}
+
+.text-box {
+  color: white;
+  font-size: 1.5em;
+
+  -webkit-transition: opacity .3s ease-in;
+  -moz-transition: opacity .3s ease-in;
+  -o-transition: opacity .3s ease-in;
+  -ms-transition: opacity .3s ease-in;
+  transition: opacity .3s ease-in;
+
+  position: absolute;
+
+  z-index: 1;
+
+  bottom:0%;
+  left:32%;
+
+  width: 35%;
+  height: 20%;
+  border-right: outset #8D8D8D 10px;
+  border-top: outset #717171 10px;
+  border-left: outset #8D8D8D 10px;
+
+  background: url(http://wallpoper.com/images/00/24/55/16/pattern-textures_00245516.jpg);
+}
+
+.profession{
+  color: black;
+  background-color: gold;
+  position:absolute;
+
+  visibility: hidden;
+
+  left:2%;
+  bottom:5%;
+}
+
+
+
+.menu-box {
+  color: white;
+  position: absolute;
+  bottom:22%;
+  right:0%;
+  width: 15%;
+  height: 45%;
+
+  visibility: hidden;
+
+  border-left: outset #444444 10px;
+  border-top: outset #717171 10px;
+  border-bottom: outset #717171 10px;
+
+  -webkit-transition: opacity .3s ease-in;
+  -moz-transition: opacity .3s ease-in;
+  -o-transition: opacity .3s ease-in;
+  -ms-transition: opacity .3s ease-in;
+  transition: opacity .3s ease-in;
+
+  background: url(http://wallpoper.com/images/00/24/55/16/pattern-textures_00245516.jpg);
+}
+
+.hide-bar{
+  /*background: url(http://podcollective.com/assets/phong/world.patterns/egypt-V1/EGYPT-C-PATTERN.png);*/
+  position: absolute;
+  bottom:23%;
+  right:0%;
+  width: 5px;
+  height: 45%;
+  background-color:slategray;
+
+  border-radius: 5px;
+}
+
+.movement-buttons{
+  height:5%;
+  width: 10%;
+
+  font-size: 50%;
+
+  position: absolute;
+  top: 75%;
+  left: 51%;
+
+  z-index: 2;
+  transform: translateX(-50%) translateY(-50%);
+
+  -webkit-transition: opacity .3s ease-in;
+  -moz-transition: opacity .3s ease-in;
+  -o-transition: opacity .3s ease-in;
+  -ms-transition: opacity .3s ease-in;
+  transition: opacity .3s ease-in;
+}
+
+.movement-buttons:hover{
+opacity: 1;
+
+-webkit-transition: opacity .3s ease-in;
+-moz-transition: opacity .3s ease-in;
+-o-transition: opacity .3s ease-in;
+-ms-transition: opacity .3s ease-in;
+transition: opacity .3s ease-in;
+}
+
+.mbutton{
+  width: 26%;
+  border-radius: 5px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 120%;
+  background: #5A8B63;
+
+}
+
+.w-up{
+  position: absolute;
+  left: 35%;
+  top: -20%;
+
+}
+
+.s-down{
+  position: absolute;
+  left: 35%;
+  top: 40%;
+}
+
+.a-left{
+  position: absolute;
+  left: 6%;
+  top: 40%;
+}
+
+.d-right{
+  position: absolute;
+  right: 11%;
+  top: 40%;
+}
+
+.main-display{
+  position: absolute;
+
+  width: 75%;
+  height: 75%;
+
+  top: 8%;
+  left: 12.5%;
+
+  background-color: black;
+
+  opacity: .5;
+
+  z-index: -1;
+}
+
+
+.city-name{
+  position: absolute;
+  top: 22%;
+  left:40%;
+
+  width:20%;
+  height:8%;
+
+  z-index: -1;
+
+  border-left: outset #8D8D8D 7px;
+  border-top: outset #717171 7px;
+  border-right: outset #8D8D8D 7px;
+
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  font-family: helvetica;
+  background: url(http://1hdwallpapers.com/wallpapers/dark_blue_texture.jpg) center center;
+}
+
+.overlay {
+  position:relative;
+  color:white;
+  top:5%;
+  left:5%;
+
+  width:90%;
+  height: 89%;
+
+  border: 1px solid white;
+}
+
+
+/*ITEM WINDOW*/
+
+.item-toggle{
+  position: absolute;
+  background-color: #FFE6CD;
+  top: 1%;
+  right:3%;
+}
+
+.item-window {
+  color:white;
+  position: absolute;
+  z-index: 9998;
+
+  visibility:hidden;
+
+  overflow-x:auto;
+  overflow-y:auto;
+
+  top:28%;
+  left:0%;
+
+  width:20%;
+  height:50%;
+
+
+  border-top: outset #717171 7px;
+  border-bottom: outset #717171 7px;
+  border-right: outset #8D8D8D 7px;
+
+  background: url(http://wallpoper.com/images/00/24/55/16/pattern-textures_00245516.jpg);
+}
+
+.item-container{
+  z-index: 9999;
+  position:absolute;
+
+  width:90%;
+
+  top:16%;
+  left:3%;
+
+  margin-bottom: 10px;
+
+  border-top: inset #8D8D8D 4px;
+  border-bottom: inset #717171 4px;
+  border-right: inset #8D8D8D 4px;
+  border-left: inset #7F7F7F 4px;
+}
+
+.item-display{
+  display:inline-block;
+
+  text-align: center;
+
+  margin-top: 5px;
+
+  width:99%;
+
+}
+
+
+
+/*HEALTH*/
+
+.healthbar{
+  position: absolute;
+  background-color: gray;
+
+  border-radius: 15px;
+
+  border-left: outset #8D8D8D 3px;
+  border-right: outset #8D8D8D 3px;
+  border-top: outset #717171 3px;
+  border-bottom: outset #717171 3px;
+
+  bottom:12%;
+  right:3%;
+
+  width: 60%;
+  height:12%;
+}
+
+.char-hp{
+
+  font-size: 80%;
+
+  position: absolute;
+
+  z-index: 99999;
+
+  bottom:14%;
+  right:14%;
+
+  height:12%;
+}
+
+.char-max-hp{
+  font-size: 80%;
+
+  position: absolute;
+
+  z-index: 99999;
+
+  bottom:14%;
+  right:2%;
+
+  width: 17%;
+  height:12%;
+}
+
+.current-health{
+  position:absolute;
+  background: #b4ddb4; /* Old browsers */
+  background: -moz-linear-gradient(top,  #b4ddb4 0%, #83c783 17%, #52b152 35%, #008a00 58%, #005700 86%, #002400 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b4ddb4), color-stop(17%,#83c783), color-stop(35%,#52b152), color-stop(58%,#008a00), color-stop(86%,#005700), color-stop(100%,#002400)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #b4ddb4 0%,#83c783 17%,#52b152 35%,#008a00 58%,#005700 86%,#002400 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #b4ddb4 0%,#83c783 17%,#52b152 35%,#008a00 58%,#005700 86%,#002400 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #b4ddb4 0%,#83c783 17%,#52b152 35%,#008a00 58%,#005700 86%,#002400 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #b4ddb4 0%,#83c783 17%,#52b152 35%,#008a00 58%,#005700 86%,#002400 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=0 ); /* IE6-9 */
+
+
+  border-radius: 10px;
+
+  top:0%;
+  right:0%;
+
+  width:90%;
+  height:100%;
+}
+
+/*SPECIAL*/
+
+.specialbar{
+  position: absolute;
+  background-color: gray;
+
+  border-radius: 15px;
+
+  border-left: outset #8D8D8D 3px;
+  border-right: outset #8D8D8D 3px;
+  border-top: outset #717171 3px;
+  border-bottom: outset #717171 3px;
+
+  bottom:30%;
+  right:3%;
+
+  width: 40%;
+  height:10%;
+}
+
+.current-special{
+  position:absolute;
+  background: #fefcea; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fefcea 0%, #f1da36 55%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefcea), color-stop(55%,#f1da36)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fefcea 0%,#f1da36 55%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fefcea 0%,#f1da36 55%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fefcea 0%,#f1da36 55%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fefcea 0%,#f1da36 55%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
+  mageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
+
+
+  border-radius: 15px;
+
+  top:0%;
+  right:0%;
+
+  width:75%;
+  height:100%;
+}
+
+.char-special{
+  font-size: 80%;
+
+  color:black;
+
+  position: absolute;
+
+  z-index: 99999;
+
+  bottom:31%;
+  right:14%;
+
+  height:12%;
+}
+
+.char-special-max{
+  font-size: 80%;
+
+  color:black;
+
+  position: absolute;
+
+  z-index: 99999;
+
+  bottom:31%;
+  right:3%;
+
+  width: 14%;
+  height:12%;
+}
+
+/*EXP*/
+
+.expbar{
+  position: absolute;
+  background-color: gray;
+
+  border-radius: 15px;
+
+  border-left: outset #8D8D8D 3px;
+  border-right: outset #8D8D8D 3px;
+  border-top: outset #717171 3px;
+  border-bottom: outset #717171 3px;
+
+  bottom:45%;
+  right:3%;
+
+  width: 30%;
+  height:12%;
+}
+
+.char-exp{
+  font-size: 80%;
+
+  position: absolute;
+
+  z-index: 99999;
+
+  bottom:47%;
+  right:14%;
+
+  height:12%;
+}
+
+.char-next-level{
+  font-size: 80%;
+
+  position: absolute;
+
+  z-index: 99999;
+
+  bottom:47%;
+  right:3%;
+
+  width: 14%;
+  height:12%;
+}
+
+.current-exp{
+  position:absolute;
+  background: rgb(109,179,242); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(109,179,242,1) 0%, rgba(84,163,238,1) 50%, rgba(54,144,240,1) 51%, rgba(30,105,222,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(109,179,242,1)), color-stop(50%,rgba(84,163,238,1)), color-stop(51%,rgba(54,144,240,1)), color-stop(100%,rgba(30,105,222,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=0 ); /* IE6-9 */
+
+  border-radius: 10px;
+
+  top:0%;
+  right:0%;
+
+  width:90%;
+  height:100%;
+}

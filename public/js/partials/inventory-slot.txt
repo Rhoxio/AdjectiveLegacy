@@ -1,0 +1,15 @@
+<div class="item-container">
+    <% @character.items.each_with_index do |item, index| %>
+      <div class="item-display item<%= index %>">
+          <div><%= item.name %></div>
+          <div><%= item.description %></div>
+          <div><%= item.count %></div>
+        <% if item.item_type == "consumable" || item.item_type == "good" %>
+          <button class="use-button use<%= index %>">Use</button>
+        <% elsif item.item_type == "weapon" || item.item_type == "shield"%>
+          <a href="/equip/<%=index%>"><button class="equip-button equip<%= index %>">Equip</button></a>
+          <div>Atk: <%= item.attack_modifier %></div>
+          <div>Def: <%= item.defense_modifier %></div>
+        <% end %>
+    </div>
+  <% end %>

@@ -1,0 +1,467 @@
+html {
+  height: 100%;
+/*  background: url(/css/images/forest.jpg) no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body{
+ width:100%;
+ height:100%;
+}
+
+.bg-overlay{
+ height:100%;
+ background-color: black;
+ opacity: .0;
+}
+
+.log-out{
+  position: absolute;
+  right:0%;
+  top:0%;
+
+  border-radius: 3px;
+  border-left: outset #444444 5px;
+  border-bottom: outset #717171 5px;
+
+
+  width: 14%;
+  height: 5%;
+  background:url(http://www.wallsandfloors.co.uk/admin/uploads/ZoomImagecalacatta%20floor1334752478.jpg);
+}
+
+.logout-button{
+  margin-left: 12%;
+  margin-top: 3%;
+  position:absolute;
+  color:red;
+}
+
+.guide-button{
+  margin-top: 3%;
+  margin-left: 46%;
+  position:absolute;
+  color:green;
+}
+
+.text-box {
+  color: white;
+  font-size: 1.5em;
+
+  -webkit-transition: opacity .3s ease-in;
+  -moz-transition: opacity .3s ease-in;
+  -o-transition: opacity .3s ease-in;
+  -ms-transition: opacity .3s ease-in;
+  transition: opacity .3s ease-in;
+
+  position: absolute;
+
+  z-index: 1;
+
+  bottom:0%;
+  left:32%;
+
+  width: 35%;
+  height: 20%;
+  border-right: outset #8D8D8D 10px;
+  border-top: outset #717171 10px;
+  border-left: outset #8D8D8D 10px;
+
+  background: url(http://wallpoper.com/images/00/24/55/16/pattern-textures_00245516.jpg);
+}
+
+.text-box:hover{
+opacity: 1;
+
+-webkit-transition: opacity .3s ease-in;
+-moz-transition: opacity .3s ease-in;
+-o-transition: opacity .3s ease-in;
+-ms-transition: opacity .3s ease-in;
+transition: opacity .3s ease-in;
+}
+
+.menu-box:hover{
+opacity: 1;
+
+-webkit-transition: opacity .3s ease-in;
+-moz-transition: opacity .3s ease-in;
+-o-transition: opacity .3s ease-in;
+-ms-transition: opacity .3s ease-in;
+transition: opacity .3s ease-in;
+}
+
+
+
+.menu-box {
+  color: white;
+  position: absolute;
+  bottom:22%;
+  right:0%;
+  width: 15%;
+  height: 45%;
+
+  visibility: hidden;
+
+  border-left: outset #444444 10px;
+  border-top: outset #717171 10px;
+  border-bottom: outset #717171 10px;
+
+  -webkit-transition: opacity .3s ease-in;
+  -moz-transition: opacity .3s ease-in;
+  -o-transition: opacity .3s ease-in;
+  -ms-transition: opacity .3s ease-in;
+  transition: opacity .3s ease-in;
+
+  background: url(http://wallpoper.com/images/00/24/55/16/pattern-textures_00245516.jpg);
+}
+
+.hide-bar{
+  /*background: url(http://podcollective.com/assets/phong/world.patterns/egypt-V1/EGYPT-C-PATTERN.png);*/
+  position: absolute;
+  bottom:23%;
+  right:0%;
+  width: 5px;
+  height: 45%;
+  background-color:slategray;
+
+  border-radius: 5px;
+}
+
+.movement-buttons{
+  height:5%;
+  width: 10%;
+
+  font-size: 50%;
+
+  position: absolute;
+  top: 75%;
+  left: 51%;
+
+  z-index: 2;
+  transform: translateX(-50%) translateY(-50%);
+
+  -webkit-transition: opacity .3s ease-in;
+  -moz-transition: opacity .3s ease-in;
+  -o-transition: opacity .3s ease-in;
+  -ms-transition: opacity .3s ease-in;
+  transition: opacity .3s ease-in;
+}
+
+.movement-buttons:hover{
+opacity: 1;
+
+-webkit-transition: opacity .3s ease-in;
+-moz-transition: opacity .3s ease-in;
+-o-transition: opacity .3s ease-in;
+-ms-transition: opacity .3s ease-in;
+transition: opacity .3s ease-in;
+}
+
+.mbutton{
+  width: 26%;
+  border-radius: 5px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 120%;
+  background: #5A8B63;
+
+}
+
+.w-up{
+  position: absolute;
+  left: 35%;
+  top: -20%;
+
+}
+
+.s-down{
+  position: absolute;
+  left: 35%;
+  top: 40%;
+}
+
+.a-left{
+  position: absolute;
+  left: 6%;
+  top: 40%;
+}
+
+.d-right{
+  position: absolute;
+  right: 11%;
+  top: 40%;
+}
+
+.main-display{
+  position: absolute;
+
+  width: 75%;
+  height: 75%;
+
+  top: 8%;
+  left: 12.5%;
+
+  background-color: black;
+
+  opacity: .5;
+
+  z-index: -1;
+}
+
+
+.city-name{
+  position: absolute;
+  top: 22%;
+  left:40%;
+
+  width:20%;
+  height:8%;
+
+  z-index: -1;
+
+  border-left: outset #8D8D8D 7px;
+  border-top: outset #717171 7px;
+  border-right: outset #8D8D8D 7px;
+
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  font-family: helvetica;
+  background: url(http://1hdwallpapers.com/wallpapers/dark_blue_texture.jpg) center center;
+}
+
+.overlay {
+  position:relative;
+  color:white;
+  top:5%;
+  left:5%;
+
+  width:90%;
+  height: 89%;
+
+  border: 1px solid white;
+}
+
+
+
+/*------------Display---------------*/
+
+.status-window{
+
+  background: url(http://www.titanui.com/wp-content/uploads/2013/09/13/Seamless-Classical-Pattern-Background-Vector-02.jpg);
+
+  text-align: center;
+  color:white;
+  font-size: 2em;
+
+  position: absolute;
+  width:28%;
+  height:18%;
+
+  bottom:0%;
+  right:4%;
+
+  border-right: outset #8D8D8D 10px;
+    border-top: outset #717171 10px;
+}
+
+.player-window{
+
+  background: url(http://www.titanui.com/wp-content/uploads/2013/09/13/Seamless-Classical-Pattern-Background-Vector-02.jpg);
+
+  text-align: center;
+  color:white;
+
+  position: absolute;
+  width:28%;
+  height:18%;
+
+  bottom:0%;
+  left:4%;
+
+  border-left: outset #8D8D8D 10px;
+    border-top: outset #717171 10px;
+}
+
+.admin-buttons{
+  position:absolute;
+  top:20%;
+
+  height:20%;
+  width:8%;
+}
+
+.admin-buttons button{
+  position:relative;
+  margin-top: 5%;
+}
+
+.overlay {
+  position:relative;
+  color:white;
+  top:5%;
+  left:5%;
+
+  width:90%;
+  height: 89%;
+
+/*  border: 1px solid white;*/
+}
+
+.character-display{
+
+  background: url(/css/images/female_thief_transparency.png)center center;
+  background-size: cover;
+
+  position:absolute;
+  color:yellow;
+
+  bottom:22%;
+  left:17%;
+
+  height:50%;
+  width:17%;
+
+  opacity: 1, !important;
+
+/*  border: 1px solid yellow;*/
+}
+
+.npc-display{
+
+  background: url(/css/images/cleric.png)center center;
+  background-size: cover;
+
+  position:absolute;
+  color:yellow;
+
+  bottom:22%;
+  right:17%;
+
+  height:50%;
+  width:17%;
+
+  opacity: 1, !important;
+
+/*  border: 1px solid yellow;*/
+}
+
+.text-box-innard{
+  position:absolute;
+  text-align: center;
+
+  color:yellow;
+
+  top:3%;
+  left:1%;
+/*
+  border: 1px solid red;*/
+
+  width:97%;
+  height:92%;
+}
+
+.css-typing
+{
+    width: 30em;
+    white-space:nowrap;
+    overflow:hidden;
+    animation: type 5s steps(50, end) 1;
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+
+.npc-container{
+  position:absolute;
+  text-align: center;
+
+  width:30%;
+  height:10%;
+
+  top:68%;
+  right:35%%;
+
+/*  border: 1px solid lime;*/
+}
+
+.switch-ryu{
+  position: absolute;
+  right: 20%;
+  bottom: 30%;
+
+  font-size: 60%;
+  z-index: 1;
+}
+
+.switch-sonia{
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+
+  font-size: 60%;
+  z-index: 1;
+}
+
+.switch-poofy{
+  position: absolute;
+  left: 15%;
+  top: 31%;
+
+  font-size: 60%;
+  z-index: 1;
+}
+
+.training-ground {
+  position: absolute;
+  right: 25%;
+  top: 25%;
+
+  font-size: 50%;
+  z-index: 1;
+}
+
+.centerline{
+  position: absolute;
+  top:0%;
+  left:0%;
+
+  border: 1px solid white;
+
+  width:50%;
+  height:100%;
+}
+
+.next{
+  position:absolute;
+
+  right:2%;
+  bottom:5%;
+}
+
+.map-display{
+  background: url(/css/images/forest_map.jpg)center center;
+  background-size: cover;
+
+  position:absolute;
+  color:yellow;
+
+  bottom:22%;
+  right:35%;
+
+  height:50%;
+  width:30%;
+
+  opacity: 1, !important;
+
+/*  border: 1px solid green;*/
+}
+}
+
+

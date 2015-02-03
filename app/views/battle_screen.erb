@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="/css/normalize.css">
+
+<link rel="stylesheet" href="/css/battle.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script src="http://code.createjs.com/easeljs-0.8.0.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.6.0.min.js"></script>
+<script src="//code.createjs.com/createjs-2014.12.12.min.js"></script>
+<script type="text/javascript" src="/js/class_controllers/<%= @character.player_class %>.js"></script>
+<script type="text/javascript" src="<%= @location.js_view %>"></script> 
+<script type="text/javascript" src="/js/views/view.js"></script> 
+<script type="text/javascript" src="/js/controllers/controller.js"></script>
+</head>
+
+  <title>Battle!</title>
+<body onload="init();">
+
+<div class="bg-overlay"></div>
+
+<div class="log-out">
+  <a href="/guide"><button class="guide-button" action="input">Guide</button></a>
+  <form class="logout-button" action="/logout" method="post">
+    <input name="_method" type="hidden" value="delete" />
+    <input style="color: red" type="submit" value="Log Out">
+ </form>
+</div>
+
+<div class="user-controls">
+  <button class="attack">Attack</button>
+  <button class="defend">Brace</button>
+  <button class="items">Items</button>
+  <button class="run">Run</button>
+  <button class="special">Special</button>
+</div>
+
+  <div class="loss">
+      <div class='defeat'>Defeat</div>
+        <div class="win-stats">You were defeated by the <%= @enemy.name %>(Level <%= @enemy.level %>).</div>
+        <div class="gainz">However, death is not the end. Hit Revive to continue.</div>
+    <form class="exit" action="/battle/loss" method ="post">
+      <input name="_method" type="hidden" value="put"/>
+      <input type="submit" value='Revive'></input>
+    </form>
+  </div>
+
+  <div class="win">
+    <div class='victory'> Victory! </div>
+        <div class="win-stats">You defeated the level <%= @enemy.level %> <%= @enemy.name %>!</div>
+        <div class="gainz">You acquired <%= @enemy.exp %> experience and <%= @enemy.gold %> gold.</div>
+
+    <form class="exit" action="/battle/win" method ="post">
+      <input name="_method" type="hidden" value="put"/>
+      <input type="submit" value="Claim EXP and Exit"></input>
+    </form>
+
+    <a class="rebattle" href='/battle'><button>Battle Again</button></a>
+  </div>
+
+<canvas id="overlay"></canvas>
+
+<div class="main-display">
+  <img class="inside" src="<%= @location.battle_background %>"></img>
+
+
+</div>
+
+
+
+
+
+<div class="character-container">
+  <div class="character">
+    <img class="inner-sizing" src="<%= @character.avatar %>"/>
+  </div>    
+</div>
+
+<div class="enemy-container">
+  <div class="enemy">
+    <img class="inner-sizing2" src="<%= @enemy.avatar %>"/>
+  </div>
+</div>
+
+<div class="enemy-window">
+  <div class="enemy-name"><%= @enemy.name %></div>
+  <div class="enemy-class"><%= @enemy.enemy_class.capitalize %></div>
+  <div class="enemy-level">Level: <%= @enemy.level %></div>
+
+  <div class="enemy-hp"><%= @enemy.current_hp %></div>
+  <div class="enemy-max-hp"> / <%=@enemy.max_hp %></div>
+
+    <div class="enemy-healthbar">
+      <div class="enemy-current-health">
+      </div>
+    </div>
+</div>
+
+<div class="player-window">
+  <div class="char-name"><%= @character.name %></div>
+  <div class="char-class"><%= @character.player_class.capitalize %></div>
+  <div class="char-level">Level: <%= @character.level %></div>
+  
+  <div class="char-hp"><%= @character.current_hp %></div>
+  <div class="char-max-hp">/ <%= @character.max_hp %></div>
+
+  <div class="char-exp"><%= @character.exp %></div>
+  <div class="char-next-level">/ <%= @character.next_level_exp %></div>
+
+  <div class="char-special"><%= @character.special %></div>
+  <div class="char-special-max">/ 100</div>
+
+  <div class="healthbar">
+    <div class="current-health">
+    </div>
+  </div>
+
+  <div class="specialbar">
+    <div class="current-special"></div>
+  </div>
+
+  <div class="expbar">
+    <div class="current-exp"></div>
+  </div>
+
+
+</div>
+
+<!-- <div class="centerline"></div> -->
+<div class="admin-buttons">
+  <button class="day-cycle">Day Advance</button>
+  <button class="night-cycle">Night Advance</button>
+  <button class="trigger-text">Trigger Text</button>
+</div>
+
+</body>
+</html>

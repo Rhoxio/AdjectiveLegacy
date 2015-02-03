@@ -1,0 +1,28 @@
+html{
+	background: url('/css/images/luxfon.com-501.jpg') center center no-repeat fixed;
+}
+
+.main-container{
+	margin-top: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+
+	color: white;
+
+	text-align: center;
+	text-shadow: 1px 1px #000;
+
+	background-color: gray;
+
+	border-right: outset #8D8D8D 7px;
+  border-top: outset #717171 7px;
+  border-left: outset #8D8D8D 7px;
+  border-bottom: outset #717171 7px;
+}
+
+h1{
+	text-shadow: 3px 3px #000;
+  text-align: center;
+  font-style: helvetica;
+  color: #F9FFF9;
+}

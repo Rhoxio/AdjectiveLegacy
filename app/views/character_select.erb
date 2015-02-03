@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="normalize.css">
+ <link rel="stylesheet" href="/css/character.css">
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+ <script type="text/javascript" src="/js/application.js"></script>
+
+  <title>Sign Up</title>
+</head>
+<body>
+
+<div class="user-status"> Logged in as: <%= @user.name %> (<%= @user.email %>)</div> 
+  <form class="login-bg" method="post" action='/characters'>  
+    <h2>Create a Character</h2>
+      <input class="input-box" type="text" name="name" placeholder="Character Name"></input>
+      <h3>Class:</h3>
+      <div class="checkbox-container">
+        <input class="checkbox1" type="radio" name="player_class" value='paladin' checked=""></input>
+          <label for="radio1">Paladin</label>
+        <input class="checkbox1" type="radio" name="player_class" value='ranger'></input>
+          <label for="radio1">Ranger</label>
+        <input class="checkbox1" type="radio" name="player_class" value='mage'></input>
+          <label for="radio1">Mage</label>
+        <input class="checkbox1" type="radio" name="player_class" value='thief'></input>
+          <label for="radio1">Thief</label>
+      </div>
+
+      <h3 class="gender-head">Gender:</h3>
+      <div class="gender-container">
+        <input class="checkbox1" type="radio" name="gender" value='male'></input>
+        <label for="radio5">Male</label>
+        <input class="checkbox1" type="radio" name="gender" value='female'></input>
+        <label for="radio6">Female</label>
+      </div>
+
+      <input class="button-styling" type="submit" value="Create">
+      <div class="home">
+      <a href="/">Back to Main Page</a>
+      </div>
+  </form>
+
+
+<% @user.characters.each do |char| %>
+  <div class="characters">
+<!--     <div class="portrait-container"> -->
+      <img class="portrait" src="<%= char.headshot %>"/></img>
+<!--     </div> -->
+    <p class="name-style"><%= char.name %></p>
+    <div class="level-style">Level: <%= char.level %></div>
+    <div class="class-style">Class: <%= char.player_class.capitalize %></div>
+<!--     <div class="charid"><%= char.id %></div> -->
+
+  <form action="/characters/<%= char.id %>" method="POST">
+    <input class="char-login" type="submit" value="Log In">
+  </form>
+
+  <form action="/characters/<%= char.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="delete-style" type="submit" value="Delete">
+  </form>
+
+  </div>
+<% end %> 
+
+    <div class="version">v 0.0.1</div>
+</body>
+</html>
+
+
+
+
+
+

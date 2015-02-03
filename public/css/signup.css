@@ -1,0 +1,135 @@
+body{
+ width:100%;
+ height:100%;
+}
+
+html {
+  background: url(http://www.wallcoo.com/cartoon/Fantasy_Scenery_CG_artwork_1920x1200/wallpapers/1920x1200/fantasy_art_scenery_wallpaper_sarel_theron_04.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+h2{
+  text-align: center;
+  font-style: helvetica;
+  color: #F9FFF9;
+}
+
+.input-box{
+  position: relative;
+  left:10%;
+  width: 80%;
+}
+
+.checkbox1{
+  position: relative;
+  left:10%;
+  width: 0%;
+}
+
+.title{
+  font-family: impact;
+  font-size: 6em;
+
+  text-align: center;
+  margin-top: 5%;
+  color:#F9FFF9;
+  text-shadow: 2px 2px 5px black;
+}
+
+.login {
+  text-align: center;
+
+  height:20%;
+  width:10%;
+
+  position: absolute;
+  top:-22%;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+
+  margin: auto;
+}
+
+.login-bg{
+  position: absolute;
+
+  border: 1px solid black;
+  border-radius: 15px;
+
+  top:20%;
+  left:40%;
+
+  width:20%;
+  height:25%;
+
+  border-right: outset #8D8D8D 7px;
+  border-top: outset #717171 7px;
+  border-left: outset #8D8D8D 7px;
+  border-bottom: outset #717171 7px;
+
+  background: url("http://us.cdn2828.fansshare.com/photos/hdwallpaper/plain-gray-texture-background-plain-1265446845.jpg");
+}
+
+.button-styling {
+  position: relative;
+  margin-top: 1%;
+  top: 10%;
+  left:10%;
+  border-radius: 5px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 80%;
+  background: #5A8B63;
+  opacity: 1;
+}
+
+.home {
+  color: white;
+  position:absolute;
+  right:5%;
+  bottom:5%;
+  font-size: 70%;
+}
+
+a:link{
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+    text-decoration: none;
+}
+
+.version{
+color: white;
+position: absolute;
+right:0%;
+bottom:0%;
+}
+
+.guide-box{
+  font-size: 110%;
+  text-shadow: 2px 2px #000;
+  margin-top: 30%;
+  color: white;
+  text-align: center;
+}
+
+.guide{
+  border-radius: 5px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 80%;
+  background: #5A8B63;
+  opacity: 1;
+}
+

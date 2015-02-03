@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/forest.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/forest/view.js"></script> 
+<script type="text/javascript" src="/js/forest/controller.js"></script>
+
+  <title>Forest</title>
+<body>
+
+<div class="bg-overlay"></div>
+
+<div class="log-out">
+  <button class="guide-button" action="input">Guide</button>
+  <form class="logout-button" action="/logout" method="post">
+    <input name="_method" type="hidden" value="delete" />
+    <input style="color: red" type="submit" value="Log Out">
+ </form>
+</div>
+
+<div class="movement-buttons slideup">
+  <button class="mbutton w-up">North</button>
+  <button class="mbutton s-down">South</button>
+  <button class="mbutton a-left">West</button>
+  <button class="mbutton d-right">East</button>
+</div>
+
+<div class="text-box">
+  <div class="text-box-innard css_typing"></div>
+  <button class="next">Info</button>
+</div>
+<div class="menu-box">
+  Menu Box
+</div>
+
+<button class="hide-bar"></button>
+
+
+<div class="character-display"></div>
+<div class="npc-display"></div>
+<div class="map-display">
+  <button class="switch-ryu">Ryu</button>
+  <button class="switch-sonia">Sonia</button>
+  <button class="switch-poofy">Poofy</button>
+  <!-- Battle Triggers -->
+  <a href="/battle"><button class="battle-start">Training</button></a>
+</div>
+
+<div class="main-display">
+  <div class="overlay">
+  </div>
+</div>
+
+<div class="status-window">
+  (No Target)
+</div>
+
+<div class="player-window">
+  <div class="char-name">Name: <%= @character.name %></div>
+  <div class="char-class">Class: <%= @character.player_class %></div>
+  <div class="char-level">Level: <%= @character.level %></div>
+  <div class="char-exp">Exp: <%= @character.exp %></div>
+  <div class="char-hp"><%= @character.current_hp %> / <%= @character.max_hp %></div>
+</div>
+
+<!-- <div class="centerline"></div> -->
+<div class="admin-buttons">
+  <button class="day-cycle">Day Advance</button>
+  <button class="night-cycle">Night Advance</button>
+  <button class="trigger-text">Trigger Text</button>
+</div>
+
+<div class="city-name">
+
+<div>
+
+</body>
+</html>
