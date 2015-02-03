@@ -6,7 +6,7 @@ The files for the 'Adjective' game can be found [here](#)
 
 This project is being converted over to a simple j-rpg style game creation engine. During it's creation, I came to the realization that a ton of the code that I was using to generate enemies, characters, and update elemnts of the UI were all extremely dynamic and could be repurposed to either make a full-fledged game, or be fine-tuned to make a simple game creation engine. 
 
-My goal at this point is to accomplish both. I wish to make a game with the tool that I am developing as a sort of 'mock' trial and a sortof testing suite. Drafts and versions of the engine will be released as I have have time to work on them.
+My goal at this point is to accomplish both. I wish to make a game with the tool that I am developing as a sort of 'mock' trial and a basic testing suite. Drafts and versions of the engine will be released as I have have time to work on them.
 
 # Technologies
 ------
