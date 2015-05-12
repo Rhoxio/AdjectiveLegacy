@@ -1,5 +1,10 @@
 var init = function() {
 
+	// Most of this ended up being coped in to the paladin.js file. Annotations for common
+	// methods can be found there. 
+
+	// Really, the only difference is in the volley animation which is toward the bottom of this file. 
+
 	var setCanvas = function() {
 		canvasWidth = document.getElementById("overlay").offsetWidth
 		canvasHeight = document.getElementById("overlay").offsetHeight
@@ -148,6 +153,9 @@ var playerSpecial = function () {
 }
 
 
+// I was extremely proud of this animation. It makes one arrow, which flies offscreen,
+// then is followed up by a rain of arrows that randomly set animation endpoints in a range.
+// Pretty cool stuff.
 
 var volley = function() {
 	console.log("hitting")

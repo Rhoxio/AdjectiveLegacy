@@ -1,3 +1,6 @@
+# I had all of my routes in a single file. Oh man was this confusing at first. I didn't
+# realize that the environment actually loads all of the files in this folder at the time, so
+# I decided to just write all of the routes in here to make sure it worked. 
 
 get '/' do
   erb :title
@@ -35,12 +38,17 @@ end
 
 
 #---------Character--------
-
+# The view for this did something like '@user.characters.each' and dynamically generated elements
+# for each character. Great implementation. 
 get '/characters' do
 	@user = User.find(current_user)
 	erb :character_select
 end
 
+# This post route is very sloppy. I could have just as easily
+# called a method to generate those extra stats as opposed to
+# manually having it all here. It would have kept the code so much 
+# cleaner.
 post '/characters' do
 	@user = User.find(current_user)
 	new_character = Character.create!(name: params[:name], player_class: params[:player_class], gender: params[:gender], level: 1, gold: 50, exp: 0, special:0, location: [0,0], max_hp: 50, current_hp: 50, skill: 1, attack_rating: 3, initiative: 5, defense: 1, weapon_id: 0, shield_id: 0, user_id: current_user, avatar: "/css/images/male_knight_transparent.png", headshot: "/css/images/headshots/male_knight_headshot.png" )
@@ -50,6 +58,9 @@ post '/characters' do
 	redirect "/characters"
 end
 
+# Look Ma, REST! Not really. This is just as sloppy, as I should have done something more like
+# 'characters/:id/assign_current' or something. I relied on sessions, which
+# isn'ta bad thing, but this limited the potential for multiple characters to be loggin in at one time.
 post "/characters/:id" do
 	@user = User.find(current_user)
 	@user.current_character = params[:id]
@@ -67,6 +78,11 @@ end
 
 #-----------Main Hub--------
 
+# Oh how I loved this navigation system. I had this idea to essentially assign a coordinate
+# system to areas that I wanted to access in the game. This worked, but the only issue I had was that I
+# didn't know how to check exact data structures against one another for some reason. So, when I
+# created a new area, I would do something like '-1-1' for the coordinates as a string. Then, 
+# I just used join here to get the right format to find the location that I wanted. 
 get '/main' do
 	@user = User.find(current_user)
 	@character = active_character
@@ -94,6 +110,12 @@ delete '/logout' do
 	redirect '/'
 end
 
+# The actual navigation part of the routes. Depending on how you wanted to move, the coordinates would get
+# changed on the character's model. I followed a standard x,y coordinate pattern for the cadinal directions.
+
+# My main issue with this implementation is the need for a page refresh. I could jave AJAXed
+# the whole thing, but I decided that it was basically the same as doing an entirely new page reresh and
+# would make the loading of new stuff less clunky. 
 put '/north' do
 	@user = User.find(current_user)
 	@character = active_character
@@ -136,7 +158,9 @@ end
 
 
 #--------Combat-----------
+# 'Queue the Decisive Battle Theme!'
 
+# Really, though. The battle system was designed in a similar way to the location system. 
 get "/battle" do
 	@user = User.find(current_user)
 	@character = active_character

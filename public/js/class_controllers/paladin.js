@@ -1,5 +1,11 @@
 var init = function() {
 
+	// I was proud of this piece of code. The CreateJS library didn't like
+	// running animations by percentages and required pixels to work,
+	// so I had to essentially get the size of the element I can rendering to
+	// and set it to a pixel width and height value as opposed to a percentage-based
+	// size.
+
 	var setCanvas = function() {
 		canvasWidth = document.getElementById("overlay").offsetWidth
 		canvasHeight = document.getElementById("overlay").offsetHeight
@@ -8,6 +14,7 @@ var init = function() {
 		$("body").append("<canvas id='overlay' height='"+canvasHeight+"' width='"+canvasWidth+"' z-index='99999'></canvas>");
 	}
 
+	// Method I used to generate as many bitmap objects as I liked.
 	var createBitmapObject = function(name, number, image) {
 		var container = Array();
 		for (i = 0; i < number; i++) {
@@ -16,6 +23,12 @@ var init = function() {
 		return container
 	}
 
+	// This project didn't require me to pass an ID to the backend, as
+	// all of the information I needed to find objects in the database was either in the
+	// session or on th user model already. I was relying on the server returning
+	// the newly ammended objects so I could use the callback function 'done' to 
+	// make changes on the front end. It was a very crude implementation, but it worked
+	// nonetheless. 
 	var playerAttack = function() {
 	$(".attack").on("click", function(event){
 	event.preventDefault();
@@ -74,6 +87,12 @@ var playerBrace = function () {
 	})
 }
 
+// Similar to the character version. The main issue with the way that this was
+// implemented on the server side was really funky. I had the character always attack
+// first, and then this method would get called after the DOM elements got updated.
+// So, in all reality, there was only one piece of turn functionality and it relied on
+// the user taking an action first. Not a clean implementation of attack-and-defend
+// functionality, but not a bad first attempt. 
 var enemyAttack = function() {
 		$.ajax({
 		url: "/battle/defend",
@@ -120,6 +139,9 @@ var playerSpecial = function () {
 	})
 })};
 
+// Similar to the attack and brace functions. I just now realized that the 
+// site redirects you to the localhost server instead of just taking you to 
+// /main or something. Oops. 
 var playerRun = function(){
 	$('.run').on("click", function(event){
 		event.preventDefault();
@@ -145,6 +167,14 @@ var playerRun = function(){
 	})
 }
 
+// This is the animation for the special attack. This caucophony
+// essentially sets the positions of the bitmap objects then executes the animations
+// in order. It is a ton of code, but the animations actually turned out nicely.
+// I do seem to remember a big with this animation in particular where the canvas would
+// constantly try to update or something and consequently caused this errorthat would
+// tick 60 times per second. I couldn't figure it out, and my instructors didn't knw anything
+// about how CreateJS worked. I left it, as you could get the first animations to run. Anything
+// after that would stick it in the loop, though. 
 var judgement = function() {
 
 	setCanvas();
@@ -214,6 +244,10 @@ var three = function() {
 	three();
 }
 
+// This is the clean animation for shooting an arrow. I didn't have time to make a special 
+// normal attack animation for the paladin class, so I just repurposed the arrow animation.
+// I lovingly call this the 'hilt bash' animation because the bitmap used actually ended up
+// getting flipped the wrong way.
 var autoAttack = function() {
 	console.log("hitting")
 
