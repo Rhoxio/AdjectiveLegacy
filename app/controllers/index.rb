@@ -61,6 +61,10 @@ end
 # Look Ma, REST! Not really. This is just as sloppy, as I should have done something more like
 # 'characters/:id/assign_current' or something. I relied on sessions, which
 # isn'ta bad thing, but this limited the potential for multiple characters to be loggin in at one time.
+
+# This actually led to problems down the road. Namely when I was trying to access specific characters down in the utility
+# routes. There is a better esplanation toward the end of this file. 
+
 post "/characters/:id" do
 	@user = User.find(current_user)
 	@user.current_character = params[:id]
@@ -83,6 +87,7 @@ end
 # didn't know how to check exact data structures against one another for some reason. So, when I
 # created a new area, I would do something like '-1-1' for the coordinates as a string. Then, 
 # I just used join here to get the right format to find the location that I wanted. 
+
 get '/main' do
 	@user = User.find(current_user)
 	@character = active_character
@@ -160,13 +165,22 @@ end
 #--------Combat-----------
 # 'Queue the Decisive Battle Theme!'
 
-# Really, though. The battle system was designed in a similar way to the location system. 
+# Really, though. The battle system was designed in a similar way to the location system.
+
+# I didn't quite understand that you could pass data back in to the server easily yet, so I
+# worked around it by essentially referencing the character with the active_character helper
+# method located in battle.rb. Take a look at that code for a better explanation. 
+
 get "/battle" do
 	@user = User.find(current_user)
 	@character = active_character
 	@location = Location.find_by(coordinates: active_character.location.join(''))
+	# enemy_spawn took the array from location.enemy_types and called .sample on it to give a single enemy object.
+	# I was proud of it at the time, but I realize it is somewhat barbaric and not very descriptive. 
 	@enemy = enemy_spawn(@location.enemy_types)
+	# I did not generate new enemies every time. I just 'regenerated' the instance used from the last time. 
 	@enemy.current_hp = @enemy.max_hp
+	# Generates a gold amount on this instance of the enemy. 
 	@enemy.enemy_gold
 	@enemy.save!
 
@@ -186,6 +200,16 @@ get "/battle/:id" do
 	set_battle(@enemy.id)
 	erb :battle_screen
 end
+
+# I look back on this code in particular and can't help but laugh a little. 
+# I didn't hash the response and ended up having to write comments about which object was in which
+# index on the front-end. Now, I would have simply hashed it and called the attribute on the
+# object that was parsed over. Like:
+
+# {'enemy' => @enemy, 'character' => @character}.to_json
+
+# Also, the special_handler method was easy to implement as it holds a check to see if the value goes below 0 or over 100. 
+# It can take both positive and negative numbers. 
 
 put "/battle/attack" do 
 	@user = User.find(current_user)
@@ -293,6 +317,8 @@ end
 
 # --------UTILITY---------
 
+
+
 put "/heal" do
 	@user = User.find(current_user)
 	@character = active_character
@@ -305,6 +331,17 @@ put "/heal" do
 	return @character.to_json
 end
 
+# OH GOD THIS IS THE UNDRYEST CODE EVER
+
+# I think I stopped caring about REST for a while.
+
+# Should go something more like:
+
+# get '/character/:id' do
+# 	@character = Character.find(params[:id])
+# 	return @character.to_json 
+# end
+
 put "/char" do
 	@character = active_character
 	return @character.to_json
@@ -315,6 +352,12 @@ put "/char/items" do
 	# items = @character.items
 	return @character.to_json
 end
+
+# Oh god. I have no idea what was going on here. It looks like
+# the same route, but one saves and another doesn't. 
+
+# Also, the page 'refresh' should technically be unnecessary if I was using
+# AJAX correctly. 
 
 put "/equip/:id" do
 	@character = active_character
@@ -329,12 +372,19 @@ put '/equip_weapon/:id' do
 	redirect '/main'
 end
 
+# So unRESTful. It hurts my eyes...
+
 put '/unequip_weapon' do
 	@character = active_character
 	@character.unequip_weapon(@character.weapon_id)
 	@character.save
 	redirect '/main'
 end
+
+# For cases where I wanted to reset their position back to the main city. Primarily
+# used when they enter an area under development. 
+
+# Again, not restful and relies on the session as most of this did. 
 
 put '/reset_position' do
 	@character = active_character
