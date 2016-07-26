@@ -7,6 +7,10 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
+gem 'rake'
+gem 'rspec'
+gem 'kramdown'
+
 
 # Use Thin for our web server
 gem 'thin'
