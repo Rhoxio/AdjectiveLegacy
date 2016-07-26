@@ -6,11 +6,14 @@ var init = function() {
 	// and set it to a pixel width and height value as opposed to a percentage-based
 	// size.
 
+	baseUrl = location.protocol + '//' + location.host;
+
 	var setCanvas = function() {
 		canvasWidth = document.getElementById("overlay").offsetWidth
 		canvasHeight = document.getElementById("overlay").offsetHeight
 		$("canvas").css("visibility", "visible");
 		$("canvas").remove();
+		// I could have saved this in constant up here. Also, lol at the z-index
 		$("body").append("<canvas id='overlay' height='"+canvasHeight+"' width='"+canvasWidth+"' z-index='99999'></canvas>");
 	}
 
@@ -32,24 +35,23 @@ var init = function() {
 	var playerAttack = function() {
 	$(".attack").on("click", function(event){
 	event.preventDefault();
-	autoAttack();
 
 	$.ajax({
 		url: "/battle/attack",
 		type: "PUT"
 	}).done(function(data){
+		// This is me figuring out how JSON works.
 		if (data === "\"win\""){
 			$(".win").css("visibility", "visible");
 		}
 		else {
 			data = $.parseJSON(data)
-			console.log(data)
-			//0 is enemy, 1 is character
+			//0 is enemy, 1 is character. This should just be a hash, but I was a newbie.
 			$(".current-special").css("width", data[1].special + "%")
 			$(".char-special").html("" + data[1].special);
 			$(".enemy-hp").html("" + data[0].current_hp);
 			$(".enemy-current-health").css("width", ((data[0].current_hp/data[0].max_hp)*100) +"%");
-			enemyAttack();
+			autoAttack();
 				if (data[1].special >= 100){
 					$(".special").css("visibility", "visible")
 				}
@@ -88,11 +90,12 @@ var playerBrace = function () {
 }
 
 // Similar to the character version. The main issue with the way that this was
-// implemented on the server side was really funky. I had the character always attack
-// first, and then this method would get called after the DOM elements got updated.
+// implemented on the server side was very coupled and I didn't understand how to pass things around well at the begining. 
+// I had the character always attack first, and then this method would get called after the DOM elements got updated.
 // So, in all reality, there was only one piece of turn functionality and it relied on
 // the user taking an action first. Not a clean implementation of attack-and-defend
 // functionality, but not a bad first attempt. 
+
 var enemyAttack = function() {
 		$.ajax({
 		url: "/battle/defend",
@@ -103,7 +106,6 @@ var enemyAttack = function() {
 			$(".loss").css("visibility", "visible");
 		}
 		else {
-			console.log(character)
 			character = $.parseJSON(character)
 			$(".current-health").css("width", ((character.current_hp/character.max_hp)*100) +"%");
 			$(".char-hp").html("" + Math.floor(character.current_hp));
@@ -126,8 +128,9 @@ var playerSpecial = function () {
 		else {
 			console.log(data)
 			data = $.parseJSON(data)
-			console.log(data)
 			//0 is enemy, 1 is character
+
+			// I want to rewrite this so bad, but will leave it alone.
 			$(".enemy-hp").html("" + data[0].current_hp); 
 			$(".enemy-current-health").css("width", ((data[0].current_hp/data[0].max_hp)*100) +"%");
 			$(".current-special").css("width", data[1].special + "%");
@@ -139,9 +142,6 @@ var playerSpecial = function () {
 	})
 })};
 
-// Similar to the attack and brace functions. I just now realized that the 
-// site redirects you to the localhost server instead of just taking you to 
-// /main or something. Oops. 
 var playerRun = function(){
 	$('.run').on("click", function(event){
 		event.preventDefault();
@@ -153,10 +153,11 @@ var playerRun = function(){
 		}).done(function(data){
 			data = $.parseJSON(data);
 
-			console.log(data)
 
 			if(data == 'success'){
-				window.location = "http://localhost:9393/main";
+				// I originally had it like this:
+				// window.location "https://localhost:9393/main";
+				window.location = baseUrl + "/main"
 			}
 			else{
 				alert("Escape failed!")
@@ -180,6 +181,8 @@ var judgement = function() {
 	setCanvas();
 
 	var stage = new createjs.Stage("overlay");
+
+	console.log('ticking in 1')
 
 	var holySword = new createjs.Bitmap('/css/images/holy-sword.png')
 		holySword.regX = 200
@@ -211,6 +214,7 @@ var judgement = function() {
 
 			createjs.Ticker.setFPS(60);
 			createjs.Ticker.addEventListener("tick", this.stage);
+			// createjs.Ticker.addEventListener("tick", console.log(''));
 		})
 	}
 
@@ -218,7 +222,7 @@ var judgement = function() {
 		$.each(holySword2, function(i, arrow){
 			holySword2.rotation = 315
 			createjs.Tween.get(holySword2, {loop: false})
-				.to({x: canvasWidth * .83, y:372}, 700, createjs.Ease.circIn)
+				// .to({x: canvasWidth * .83, y:372}, 700, createjs.Ease.circIn)
 				.to({alpha: 0}, 2600)
 
 			createjs.Ticker.setFPS(60);

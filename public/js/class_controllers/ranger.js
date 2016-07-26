@@ -5,6 +5,8 @@ var init = function() {
 
 	// Really, the only difference is in the volley animation which is toward the bottom of this file. 
 
+	baseUrl = location.protocol + '//' + location.host;
+
 	var setCanvas = function() {
 		canvasWidth = document.getElementById("overlay").offsetWidth
 		canvasHeight = document.getElementById("overlay").offsetHeight
@@ -87,11 +89,9 @@ var enemyAttack = function() {
 		type: "PUT"
 	}).done(function(character){
 		if (character === "\"lose\""){
-			console.log(character)
 			$(".loss").css("visibility", "visible");
 		}
 		else {
-			console.log(character)
 			character = $.parseJSON(character)
 			$(".current-health").css("width", ((character.current_hp/character.max_hp)*100) +"%");
 			$(".char-hp").html("" + Math.floor(character.current_hp));
@@ -141,7 +141,10 @@ var playerSpecial = function () {
 			console.log(data)
 
 			if(data == 'success'){
-				window.location = "http://localhost:9393/main";
+				window.location = baseUrl + "/main"
+				// I originally had it like this:
+				// window.location "https://localhost:9393/main";
+				// window.location = "https://"window.location.href+"/main";
 			}
 			else{
 				alert("Escape failed!")
