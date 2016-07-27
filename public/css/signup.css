@@ -4,7 +4,7 @@ body{
 }
 
 html {
-  background: url(http://www.wallcoo.com/cartoon/Fantasy_Scenery_CG_artwork_1920x1200/wallpapers/1920x1200/fantasy_art_scenery_wallpaper_sarel_theron_04.jpg) no-repeat center center fixed;
+  background: url(/css/images/) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
