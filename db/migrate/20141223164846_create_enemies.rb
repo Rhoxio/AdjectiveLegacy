@@ -1,4 +1,4 @@
-class CreateEnemies < ActiveRecord::Migration
+class CreateEnemies < ActiveRecord::Migration[4.2]
   def change
   	create_table :enemies do |t|
   	t.string :name

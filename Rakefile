@@ -1,11 +1,13 @@
 require 'rake'
 require 'rspec/core/rake_task'
-
-
 require ::File.expand_path('../config/environment', __FILE__)
+require 'sinatra/activerecord/rake'
 
 # Include all of ActiveSupport's core class extensions, e.g., String#camelize
 require 'active_support/core_ext'
+# require 'standalone_migrations'
+
+# StandaloneMigrations::Tasks.load_tasks
 
 namespace :generate do
   desc "Create an empty model in app/models, e.g., rake generate:model NAME=User"
@@ -98,14 +100,50 @@ namespace :db do
     exec("dropdb #{DB_NAME}")
   end
 
-  desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
+  # desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
+  # task :migrate do
+  #   ActiveRecord::Migration.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
+  #   ActiveRecord::Migration.verbose = ENV["VERBOSE"] ? ENV["VERBOSE"] == "true" : true
+  #   ActiveRecord::Migration.migrate(ActiveRecord::Migration.migrations_paths, ENV["VERSION"] ? ENV["VERSION"].to_i : nil) do |migration|
+  #     ENV["SCOPE"].blank? || (ENV["SCOPE"] == migration.scope)
+  #   end
+  # end
+
+  desc "Migrate the database"
   task :migrate do
-    ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
-    ActiveRecord::Migration.verbose = ENV["VERBOSE"] ? ENV["VERBOSE"] == "true" : true
-    ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths, ENV["VERSION"] ? ENV["VERSION"].to_i : nil) do |migration|
-      ENV["SCOPE"].blank? || (ENV["SCOPE"] == migration.scope)
+    db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{APP_NAME}_#{Sinatra::Application.environment}")
+    ActiveRecord::Base.establish_connection(
+      :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+      :host     => db.host,
+      :port     => db.port,
+      :username => db.user,
+      :password => db.password,
+      :database => DB_NAME,
+      :encoding => 'utf8'
+    )
+    ActiveRecord::Migration.migrate(:up)
+    Rake::Task["db:schema"].invoke
+    puts "Database migrated."
+  end  
+
+  desc 'Create a db/schema.rb file that is portable against any DB supported by AR'
+  task :schema do
+    db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{APP_NAME}_#{Sinatra::Application.environment}")
+    ActiveRecord::Base.establish_connection(
+      :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+      :host     => db.host,
+      :port     => db.port,
+      :username => db.user,
+      :password => db.password,
+      :database => DB_NAME,
+      :encoding => 'utf8'
+    )
+    require 'active_record/schema_dumper'
+    filename = "db/schema.rb"
+    File.open(filename, "w:utf-8") do |file|
+      ActiveRecord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
     end
-  end
+  end  
 
   desc "Populate the database with dummy data by running db/seeds.rb"
   task :seed do
@@ -114,7 +152,7 @@ namespace :db do
 
   desc "Returns the current schema version number"
   task :version do
-    puts "Current version: #{ActiveRecord::Migrator.current_version}"
+    puts "Current version: #{ActiveRecord::Migration.current_version}"
   end
 end
 

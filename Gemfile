@@ -6,18 +6,22 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-activerecord'
 
 gem 'rake'
 gem 'rspec'
 gem 'kramdown'
 
 
+
 # Use Thin for our web server
 gem 'thin'
 gem 'shotgun'
 
-gem 'activesupport', '~>4.1'
-gem 'activerecord', '~>4.1'
+gem 'activesupport'
+gem 'activerecord', '5.2'
+
+gem 'standalone_migrations'
 
 gem 'rake'
 gem 'hirb'
