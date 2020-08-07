@@ -26,7 +26,8 @@ GEM
     hirb (0.7.2)
     i18n (0.6.9)
     json (1.8.1)
-    kramdown (1.11.1)
+    kramdown (2.3.0)
+      rexml
     minitest (5.3.4)
     multi_json (1.10.1)
     pg (0.17.1)
@@ -36,6 +37,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.3.2)
+    rexml (3.2.4)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
