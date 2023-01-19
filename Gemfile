@@ -16,8 +16,8 @@ gem 'kramdown'
 gem 'thin'
 gem 'shotgun'
 
-gem 'activesupport', '~>4.1'
-gem 'activerecord', '~>4.1'
+gem 'activesupport', '~>7.0'
+gem 'activerecord', '~>7.0'
 
 gem 'rake'
 gem 'hirb'
